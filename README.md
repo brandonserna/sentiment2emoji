@@ -1,24 +1,47 @@
 # sentiment2emoji
 
-🤩 Sentiment to Emoji 🤩
+🤩 Sentiment2Emoji 🤩
 
-A side project that given a string of text a machine learning classifier attempts to predict the appropriate sentiment and return an emoji. 
+Find an emoji for a passage of text. This project uses machine learning to predict the sentiment (multivariate) of a given string and return an appropriate emoji. There is a web service provided using flask that is can be found at the demo link below.
+
+_Emotions_:
+
+* Love
+* Anger
+* Joy
+* Surprise
+* Sadness
+* Fear
 
 ### Sample
 
-__input:__ ""
+__input:__ "The last jedi was the greatest movie!"
 
+__output:__ 😍
 
-## Quick Start for Flask app
+__input:__ "Collard greens are absolutely disgusting "
 
-Requires: Python 3.6 and Flask 
+__output__: 😡
+
+### Quick Start for Flask app
 
 ```sh
 python flask-app.py
 ```
 
-## Demo
+### Demo
 
 ```
 https://sentiment2emoji.herokuapp.com/predict
 ```
+
+### Resources and References
+
+Thank you
+
+* Python
+* Pandas
+* Scikit-learn
+* Numpy
+* Matplotlib
+* Data: ```F. Calefato, F. Lanubile, N. Novielli. “[EmoTxt: A Toolkit for Emotion Recognition from Text](https://arxiv.org/abs/1708.03892)” To appear in *Proceedings of ACII 2017, the 7th International Conference on Affective Computing and Intelligent Interaction*, San Antonio, USA, Oct. 23-26, 2017.```
