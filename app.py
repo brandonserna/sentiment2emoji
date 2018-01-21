@@ -13,6 +13,10 @@ def get():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
+        # Load scikit learn model
+        clf = pickle.load(open('gb_model.sklearn', 'rb'))
+        # Load previous tfidf representation
+        load_tfidf = pickle.load(open('tfidf.sklearn', 'rb'))
         try:
             # pre-process
             x = str(request.form.get('query'))
@@ -31,7 +35,8 @@ def predict():
                 return '😳'
             if prediction == ['surprised']:
                 return '🤭'
-        except Exception:
+        except Exception as e:
+            print(e)
             return '☠️'
     return '''
     <!doctype html>
