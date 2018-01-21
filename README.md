@@ -9,10 +9,16 @@ A side project that given a string of text a machine learning classifier attempt
 __input:__ ""
 
 
-# Quick Start for Flask app
+## Quick Start for Flask app
 
 Requires: Python 3.6 and Flask 
 
 ```sh
 python flask-app.py
+```
+
+## Demo
+
+```
+https://sentiment2emoji.herokuapp.com/predict
 ```
