@@ -1,22 +1,23 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 import pickle
 
 
 app = Flask(__name__)
-
+# Load scikit learn model
+clf = pickle.load(open('gb_model.sklearn', 'rb'))
+# Load previous tfidf representation
+load_tfidf = pickle.load(open('tfidf.sklearn', 'rb'))
+print('Loaded model ✔')
 
 @app.route('/', methods=['GET'])
 def get():
-    return 'Hello there... try /predict '
+    return redirect('/predict')
 
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
-        # Load scikit learn model
-        clf = pickle.load(open('gb_model.sklearn', 'rb'))
-        # Load previous tfidf representation
-        load_tfidf = pickle.load(open('tfidf.sklearn', 'rb'))
+        
         try:
             # pre-process
             x = str(request.form.get('query'))
@@ -41,7 +42,11 @@ def predict():
     return '''
     <!doctype html>
     <title>Sentiment2Emoji</title>
-    <h1>Submit text to predict...</h1>
+    <h1>Enter a text snippet to predict the sentiment</h1>
+    <br>
+    <p><strong>Example: </strong>
+    <br>
+    Collard greens are absolutely disgusting.
     <form method=post>
       <p><input type=text name=query>
          <input type=submit>

@@ -2,7 +2,9 @@
 
 🤩 Sentiment2Emoji 🤩
 
-Find an emoji for a passage of text. This project uses machine learning to predict the sentiment (multivariate) of a given string and return an appropriate emoji. There is a web service provided using flask that is can be found at the demo link below.
+Find an emoji for a passage of text. This project uses machine learning to predict the sentiment of a given string and return an appropriate emoji. There is a web service provided using flask that is can be found at the demo link below.
+
+__Note__ — Emojis are best seen on updated iOS or a mac, sometimes the conversion for anger/surprised doesn't show up correctly
 
 _Emotions_:
 
@@ -26,7 +28,7 @@ __output__: 😡
 ### Quick Start for Flask app
 
 ```sh
-python flask-app.py
+python app.py
 ```
 
 ### Demo
