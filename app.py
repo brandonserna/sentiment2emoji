@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, redirect
+from flask_restplus import Api, Resource
 import pickle
 
 
@@ -8,6 +9,9 @@ clf = pickle.load(open('gb_model.sklearn', 'rb'))
 # Load previous tfidf representation
 load_tfidf = pickle.load(open('tfidf.sklearn', 'rb'))
 print('Loaded model ✔')
+api = Api(app, version='1.0', title='sentiment2emoji API',
+               description='Small API to predict sentiment on text',
+               name='API')  # restplus addition
 
 @app.route('/', methods=['GET'])
 def get():
@@ -52,6 +56,34 @@ def predict():
          <input type=submit>
     </form>
     '''
+
+
+@api.route('/api/<snippet>')
+@api.param('snippet', 'text snippet for sentiment')
+@api.response(404, 'eh')
+class Prediction(Resource):
+    def post(self, snippet):
+        try:
+            # pre-process 
+            x = str(snippet)
+            tfidf = load_tfidf.transform([x])
+            prediction = clf.predict(tfidf)
+
+            if prediction == ['love']:
+                return {'love': '😍'}
+            if prediction == ['anger']:
+                return {'anger':'😡'}
+            if prediction == ['joy']:
+                return {'joy':'😊'}
+            if prediction == ['sad']:
+                return {'sad':'☹️'}
+            if prediction == ['fear']:
+                return {'fear':'😳'}
+            if prediction == ['surprised']:
+                return {'surprised':'🤭'}
+        except Exception as e:
+            return {'error':'☠️', 
+                    'message': str(e)}
 
 
 if __name__ == '__main__':

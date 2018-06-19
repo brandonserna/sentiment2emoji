@@ -53,6 +53,7 @@ MarkupSafe = "==1.0"
 prompt_toolkit = "==1.0.15"
 Pygments = "==2.2.0"
 Werkzeug = "==0.14.1"
+flask-restplus = "*"
 
 [dev-packages]
 
