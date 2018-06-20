@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "51bc282dd55cd8faeff0eeb8fe325578623099c5c62c4ba9ee4c0c9f5c067032"
+            "sha256": "c267b88beda42a94496536efca19d054baad5ed615a561e9e02d109f90c7412d"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,13 @@
         ]
     },
     "default": {
+        "aniso8601": {
+            "hashes": [
+                "sha256:7cf068e7aec00edeb21879c2bbda048656c34d281e133a77425be03b352122d8",
+                "sha256:f7052eb342bf2000c6264a253acedb362513bf9270800be2bc8e3e229fe08b5a"
+            ],
+            "version": "==3.0.0"
+        },
         "appnope": {
             "hashes": [
                 "sha256:5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0",
@@ -87,6 +94,13 @@
             ],
             "index": "pypi",
             "version": "==0.12.2"
+        },
+        "flask-restplus": {
+            "hashes": [
+                "sha256:1664401e61bcec4fdcfbfd25df81b233fe7388a6ae73c37b78918957609508b6"
+            ],
+            "index": "pypi",
+            "version": "==0.11.0"
         },
         "gunicorn": {
             "hashes": [
