@@ -36,7 +36,7 @@ export default {
   methods: {
     async submit () {
       const x = this.snippet;
-      const url = 'http://0.0.0.0:9999/api/'.concat(x);
+      const url = 'https://sentiment2emoji.herokuapp.com/api/'.concat(x);
       const r = await axios.post(url);
       this.info = r.data;
     }
