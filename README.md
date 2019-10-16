@@ -37,6 +37,17 @@ python app.py
 https://sentiment2emoji.herokuapp.com/predict
 ```
 
+## Frontend
+
+Using Vue and Vuetify
+
+```sh
+vue create frontend
+vue add vuetify
+```
+
+
+
 ### Resources and References
 
 Thank you

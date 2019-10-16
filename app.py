@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify, redirect
 from flask_restplus import Api, Resource
+from flask_cors import CORS
 import pickle
 
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 # Load scikit learn model
 clf = pickle.load(open('gb_model.sklearn', 'rb'))
 # Load previous tfidf representation
