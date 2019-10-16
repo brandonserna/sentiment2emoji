@@ -44,6 +44,7 @@ Using Vue and Vuetify
 ```sh
 vue create frontend
 vue add vuetify
+npm run build
 ```
 
 
