@@ -11,7 +11,7 @@
         <v-textarea v-model="snippet" prepend-icon="mdi-cards-heart" label="Enter sample text snippet here..." @keyup.enter="submit"/>
       </v-card-text>
     <v-card-actions>
-      <v-btn color="success" @click="submit" type="submit">Submit</v-btn>
+      <v-btn color="success" @click="submit">Submit</v-btn>
       
     </v-card-actions>
     <v-divider></v-divider>
