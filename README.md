@@ -1,8 +1,12 @@
-# sentiment2emoji
+# 🤩 Sentiment2Emoji 🤩
 
-🤩 Sentiment2Emoji 🤩
+Find an emoji for a passage of text. This project uses machine learning to predict the sentiment of a given string and return an appropriate emoji. 
 
-Find an emoji for a passage of text. This project uses machine learning to predict the sentiment of a given string and return an appropriate emoji. There is a web service provided using flask that is can be found at the demo link below.
+The project uses Flask for the backend server along with Swagger docs for the service. It also uses a Vue frontend hosted on github. 
+
+[Website](https://brandonserna.github.io/sentiment2emoji/)
+
+[API Docs](https://sentiment2emoji.herokuapp.com)
 
 __Note__ — Emojis are best seen on updated iOS or a mac, sometimes the conversion for anger/surprised doesn't show up correctly
 
@@ -54,6 +58,8 @@ npm run build
 Thank you
 
 * Python
+* Flask restplus
+* Vue
 * Pandas
 * Scikit-learn
 * Numpy
